@@ -1,0 +1,8 @@
+%h1 Root landing space
+
+#categories
+%ul
+  = render partial: 'common/category', collection: @categories
+
+#products
+  = render partial: 'common/product', collection: @products

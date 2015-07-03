@@ -26,3 +26,6 @@ end
 
 gem 'devise'
 
+gem 'haml', '~> 4.0.6'
+gem 'haml-rails'
+
