@@ -1,12 +1,22 @@
-=form_for(Review.new, url: {action: "product_review"}, remote: true, format: :json) do |f|
-  .field
-    = f.label :msg
-    = f.text_area :msg
-    = f.hidden_field :product_id, :value => product.id
-  .actions
-    = f.submit
-
+- if user_signed_in?
+  .panel.panel-default
+    .panel-heading
+      .panel-title Leave your review here
+    .panel-body
+      =form_for(Review.new, url: {action: "product_review"}, remote: true, format: :json) do |f|
+        .field
+          .form-group
+            = f.text_area :msg, {:class => "form-control"}
+            = f.hidden_field :product_id, :value => product.id
+        .actions
+          = f.submit "Add Review", {:class => "btn btn-success btn-xs pull-right"}
+- else
+  .alert.alert-info
+    =link_to "Sing-in to add your product review", new_user_session_path
 -product.reviews.each do |review|
-  =review.msg
-  =review.created_at
-  %br
+  .panel.panel-default
+    .panel-body
+      .form-group
+        =review.msg
+    .panel-footer
+      =review.created_at

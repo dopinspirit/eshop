@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   post '/create_review', to: 'navigator#product_review', as: 'product_review'
 
-  resources :products
-  resources :categories
-
+  authenticated :user, lambda {|u| u.admin?} do
+    scope "/admin" do
+      resources :products
+      resources :categories
+    end
+  end
 end
