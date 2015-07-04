@@ -29,3 +29,6 @@ gem 'devise'
 gem 'haml', '~> 4.0.6'
 gem 'haml-rails'
 
+gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'autoprefixer-rails'
+

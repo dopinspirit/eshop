@@ -1,8 +1,9 @@
-%h1 Root landing space
+.row
+  .col-md-4
+    #categories
+      .btn-group-vertical{:role=>"group"}
+        = render partial: 'common/category', collection: @categories
 
-#categories
-%ul
-  = render partial: 'common/category', collection: @categories
-
-#products
-  = render partial: 'common/product', collection: @products
+  .col-md-8
+    #products
+      = render partial: 'common/product', collection: @products
