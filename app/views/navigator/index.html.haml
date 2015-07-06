@@ -1,9 +1,9 @@
 .row
-  .col-md-4
+  .col-md-3
     #categories
-      .btn-group-vertical{:role=>"group"}
+      .btn-group-vertical.pull-right{:role=>"group"}
         = render partial: 'common/category', collection: @categories
 
-  .col-md-8
+  .col-md-9
     #products
       = render partial: 'common/product', collection: @products
