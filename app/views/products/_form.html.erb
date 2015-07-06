@@ -16,7 +16,8 @@
       <%= f.label :description, "Product Description:"%>
       <%= f.text_area :description %>
       <%= f.label :category_id, "Product Category:"%>
-      <%= f.select :category_id, Category.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'} %>
+      <%= f.select :category_id, Category.all.collect {|p| [ p.name, p.id ] } %>
+      <%= f.attachment_field :product_image %>
       <%= f.submit %>
   </div>
 <% end %>

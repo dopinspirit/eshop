@@ -32,3 +32,6 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'autoprefixer-rails'
 
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+
