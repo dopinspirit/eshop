@@ -15,6 +15,8 @@
       <%= f.text_field :title %>
       <%= f.label :description, "Product Description:"%>
       <%= f.text_area :description %>
+      <%= f.label :price, "Product Price:"%>
+      <%= f.text_field :price %>
       <%= f.label :category_id, "Product Category:"%>
       <%= f.select :category_id, Category.all.collect {|p| [ p.name, p.id ] } %>
       <%= f.attachment_field :product_image %>
