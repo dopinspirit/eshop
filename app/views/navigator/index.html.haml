@@ -1,9 +1,19 @@
-.row
-  .col-md-3
-    #categories
-      .btn-group-vertical.pull-right{:role=>"group"}
-        = render partial: 'common/category', collection: @categories
+%section
+  .container
+    .row
+      .col-sm-3
+        .left-sidebar
+          %h2 Category
+          .panel-group.category-products{:id=>"accordian"}
+            = render partial: 'common/category', collection: @categories
 
-  .col-md-9
-    #products
-      = render partial: 'common/product', collection: @products
+
+      .col-sm-9.padding-right
+        .features_items
+          %h2{:class=>"title text-center"} Products
+
+        .category-tab
+          .tab-content
+            .tab-pane.fade.active.in{:id=>"products"}
+              = render partial: 'common/product', collection: @products
+

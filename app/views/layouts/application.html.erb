@@ -14,19 +14,19 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="assets/logo.png" alt="" /></a>
+                            <a href="<%=root_url%>"><img src="assets/logo.png" alt="" /></a>
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
                                 <% if current_user.try(:admin?) %>
-                                     <li><a href="#">Manage Categories</a></li>
-                                     <li><a href="#">Manage Products</a></li>
+                                     <li><%= link_to "Manage Categories", categories_path %></li>
+                                     <li><%= link_to "Manage Products", products_path %></li>
                                 <%end%>
                                 <li><a href="cart.html">Cart</a></li>
                                <% if user_signed_in? %>
-                                    <li><a href="#" class="active"><span class="glyphicon glyphicon-user" aria-hidden="true" /> <%= current_user.email %></a></li>
+                                    <li><a href="#" class="active"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.email %></a></li>
                                     <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class=>"disabled" %></li>
                                     <% elsif%>
                                     <li><%= link_to "Sign in", new_user_session_path %></li>
@@ -60,31 +60,7 @@
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
-<!-- <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
 
-        <div class="navbar-header">
-            <a href="<%=root_url%>" class="navbar-brand">Shop</a>
-        </div>
-
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <% if current_user.try(:admin?) %>
-                <li><a href="#">Manage Categories</a></li>
-                <li><a href="#">Manage Products</a></li>
-                <%end%>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <% if user_signed_in? %>
-                <li><a href="#">Welcome <%= current_user.email %></a></li>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                <% elsif%>
-                <li><%= link_to "Sign in", new_user_session_path %></li>
-                <%end%>
-            </ul>
-        </div>
-    </div>
-</nav> -->
 
 <div class="container">
   <%= yield %>
