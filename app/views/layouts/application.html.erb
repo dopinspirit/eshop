@@ -6,6 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
 </head>
 <body>
 <header id="header"><!--header-->
@@ -65,6 +69,22 @@
 <div class="container">
   <%= yield %>
 </div>
+
+<footer id="footer" ><!--Footer class="navbar navbar-fixed-bottom"-->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="companyinfo">
+                            <h2><span>e</span>-shopper</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer><!--/Footer-->
 
 </body>
 </html>

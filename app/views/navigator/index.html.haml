@@ -5,6 +5,10 @@
         .left-sidebar
           %h2 Category
           .panel-group.category-products{:id=>"accordian"}
+            .panel.panel-default
+              .panel-heading
+                %h4{:class=>"panel-title"}
+                  = link_to "All Products", root_path
             = render partial: 'common/category', collection: @categories
 
 

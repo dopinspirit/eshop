@@ -1,7 +1,52 @@
-=image_tag attachment_url(product, :product_image, :fill, 850, 600, format: "jpg")
-=product.description
+-# =image_tag attachment_url(product, :product_image, :fill, 850, 600, format: "jpg")
+-# =product.description
 
-#reviews
-  =render partial: "common/reviews", locals: {product: product}
+-# #reviews
+-#   =render partial: "common/reviews", locals: {product: product}
+
+
+.product-details
+  .col-sm-5
+    .view-product
+      =image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
+
+  .col-sm-7
+    .product-information
+      %span
+        %h2= product.title
+        %p= product.description
+        %span
+          %span= "$"+product.price.to_s
+
+.category-tab.shop-details-tab
+  .tab-content
+    .tab-pane.fade.active.in{:id=>"reviews"}
+      .col-sm-12
+        %p
+          %p
+            %b
+              Reviews
+
+        %ul
+          %li
+            %a{:href=>"#"}
+              %span.glyphicon.glyphicon-user
+              EUGEN
+          %li
+            %a{:href=>"#"}
+              %span.glyphicon.glyphicon-time
+              12:41 PM
+          %li
+            %a{:href=>"#"}
+              %span.glyphicon.glyphicon-calendar
+              12:41 PM
+        %p incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+        %p
+          %b Write Your Review
+        %form{:action=>"#"}
+          %textarea{:name=>""}
+          %button{:type=>"button", :class=>"btn btn-default pull-right"}Submit
+
 
 
