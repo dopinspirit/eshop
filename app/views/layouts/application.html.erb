@@ -6,10 +6,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
 </head>
 <body>
 <header id="header"><!--header-->
@@ -18,7 +14,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="<%=root_url%>"><img src="assets/logo.png" alt="" /></a>
+                            <a href="<%=root_url%>"><img src="/assets/logo.png" alt="" /></a>
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -29,10 +25,10 @@
                                      <li><%= link_to "Manage Products", products_path %></li>
                                 <%end%>
                                 <li><a href="cart.html">Cart</a></li>
-                               <% if user_signed_in? %>
+                                <% if user_signed_in? %>
                                     <li><a href="#" class="active"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.email %></a></li>
                                     <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class=>"disabled" %></li>
-                                    <% elsif%>
+                                <% else %>
                                     <li><%= link_to "Sign in", new_user_session_path %></li>
                                 <%end%>
                             </ul>

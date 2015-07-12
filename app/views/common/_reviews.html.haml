@@ -1,22 +1,36 @@
-- if user_signed_in?
-  .panel.panel-default
-    .panel-heading
-      .panel-title Leave your review here
-    .panel-body
-      =form_for(Review.new, url: {action: "product_review"}, remote: true, format: :json) do |f|
-        .field
-          .form-group
-            = f.text_area :msg, {:class => "form-control"}
-            = f.hidden_field :product_id, :value => product.id
-        .actions
-          = f.submit "Add Review", {:class => "btn btn-success btn-xs pull-right"}
-- else
-  .alert.alert-info
-    =link_to "Sing-in to add your product review", new_user_session_path
--product.reviews.each do |review|
-  .panel.panel-default
-    .panel-body
-      .form-group
-        =review.msg
-    .panel-footer
-      =review.created_at
+.tab-content
+  .tab-pane.fade.active.in{:id=>"reviews"}
+    .col-sm-12
+      - if user_signed_in?
+        %p
+          %p
+            %b Write Your Review
+          =form_for(Review.new, url: {action: "product_review"}, remote: true, format: :json) do |f|
+            .field
+              .form-group
+                = f.text_area :msg, {:class => "form-control"}
+                = f.hidden_field :user_id, :value => current_user.id
+                = f.hidden_field :product_id, :value => product.id
+            .actions
+              = f.button "Add Review", {:class => "btn btn-default pull-right", :type=>"submit"}
+      - else
+        .alert.alert-info
+          =link_to "Sing-in to add your product review", new_user_session_path
+    %p
+      %b
+        Reviews
+
+    -product.reviews.each do |review|
+      %ul
+        %li
+          %span.glyphicon.glyphicon-user
+          = user_email review
+        %li
+          %span.glyphicon.glyphicon-time
+          = review.created_at.strftime('%r')
+        %li
+          %span.glyphicon.glyphicon-calendar
+          = review.created_at.strftime('%v')
+      %p
+        = review.msg
+      %hr
