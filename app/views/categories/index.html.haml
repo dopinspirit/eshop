@@ -1,0 +1,16 @@
+.container
+  %h2.title.text-center
+    Categories to Manage
+  .category-tab
+    .tab-content
+      .tab-pane.fade.active.in{:id=>"categories"}
+        .col-md-12
+          = link_to 'New Category', new_category_path, class: "btn btn-info pull-right"
+
+        .blog-post-area
+          - @categories.each do |category|
+            .single-blog-post.form-group.col-md-3
+              %h3
+                = category.name
+              = link_to 'Edit', edit_category_path(category), class: "btn btn-warning pull-left btn-block"
+              = link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning pull-left btn-block"
