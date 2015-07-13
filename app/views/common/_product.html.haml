@@ -5,6 +5,5 @@
         = link_to image_tag(attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")), product_details_path(product_id: product.id ), :remote => true
         %h2="$" + product.price.to_s
         %p= product.title
-        %a{:href=>"#", :class=>"btn btn-default btn-sm btn-block "}Add to cart
 
 
