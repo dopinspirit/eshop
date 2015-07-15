@@ -3,9 +3,6 @@ class Product < ActiveRecord::Base
   has_many :reviews
 
   attachment :product_image
+  validates_presence_of :title, :description, :category_id, :price
 
-  validates :title, presence: true
-  validates :description, presence: true
-  validates :category_id, presence: true
-  validates :price, presence: true
 end
