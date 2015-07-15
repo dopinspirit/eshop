@@ -22,6 +22,14 @@ group :development, :test do
 
   gem 'spring'
 
+  gem 'factory_girl_rails', '~> 4.5.0'
+
+  gem 'shoulda-matchers'
+
+  gem 'rspec-rails', '~> 3.3.2'
+
+  gem 'forgery', '~> 0.6.0'
+
 end
 
 gem 'devise'

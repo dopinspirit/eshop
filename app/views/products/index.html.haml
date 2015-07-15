@@ -1,0 +1,21 @@
+.container
+  %h2.title.text-center
+    Choose a Product to Manage
+  .category-tab
+    .tab-content
+      .tab-pane.fade.active.in{:id=>"products"}
+        .col-md-12
+          = link_to 'New Product', new_product_path, class: "btn btn-info pull-right"
+        - @products.each do |product|
+          .col-sm-3
+            .product-image-wrapper
+              .single-products
+                .productinfo.text-center
+                  = link_to image_tag(attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")), edit_product_path(product)
+                  %h2="$" + product.price.to_s
+                  %p= product.title
+                  %p= product.description
+                  = link_to 'Edit', edit_product_path(product), class: "btn btn-warning pull-left btn-block"
+                  = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning btn-block pull-right"
+
+

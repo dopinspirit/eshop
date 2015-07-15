@@ -1,0 +1,27 @@
+.container
+  %h2.title.text-center
+    Log-in
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .blog-post-area
+    .form-group.col-lg-12
+      .form-group.col-md-8
+        .single-blog-post.form-group.col-md-8
+          %h3
+            = f.label :email
+          = f.email_field :email, autofocus: true, class: "form-control"
+      .form-group.col-md-8
+        .single-blog-post.form-group.col-md-8
+          %h3
+            = f.label :password
+          = f.password_field :password, autocomplete: "off", class: "form-control"
+      - if devise_mapping.rememberable?
+        .form-group.col-md-8
+          .single-blog-post.form-group.col-md-8
+            %h3
+              = f.label :remember_me
+            = f.check_box :remember_me
+      .form-group.col-md-8
+        .single-blog-post.form-group.col-md-8
+          = f.submit "Log in", class: "btn btn-success pull-right"
+          = render "users/shared/links"

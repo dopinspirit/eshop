@@ -31,3 +31,9 @@
 
 # sftp configuration file
 sftp-config.json
+<<<<<<< HEAD
+=======
+
+#rubymine
+.idea/
+>>>>>>> layout
