@@ -14,7 +14,7 @@ gem 'capistrano-rails', group: :development
 
 group :development, :test do
 
-  gem 'sqlite3'
+  # gem 'sqlite3'
 
   gem 'byebug'
 
