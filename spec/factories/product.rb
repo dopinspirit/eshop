@@ -4,7 +4,7 @@ FactoryGirl.define do
     description {Forgery(:lorem_ipsum).words(5) }
     price 999.9
 
-    category {FactoryGirl.create(:category)}
+    category_id {FactoryGirl.create(:category).id}
   end
 
 end
