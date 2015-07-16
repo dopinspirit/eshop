@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -263,7 +262,7 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(../images/home/searchicon.png);
+  background-image: url(assets/searchicon.png);
   background-repeat: no-repeat;
   background-position: 130px;
 }
@@ -899,7 +898,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -911,7 +909,6 @@ h2.title {
 .product-overlay .overlay-content {
   bottom: 0;
   position: absolute;
-  bottom: 0;
   text-align: center;
   width: 100%;
 }
@@ -2141,7 +2138,6 @@ h2.title {
 
 .rating-area {
   border: 1px solid #F7F7F0;
-  direction: block;
   overflow: hidden;
 }
 
@@ -2158,7 +2154,7 @@ h2.title {
 }
 
 
-.rating-area 
+.rating-area,
 .ratings li i {
   color:#CCCCCC
 }
@@ -2170,7 +2166,7 @@ h2.title {
   text-transform: uppercase;
 }
 
-.rating-area 
+.rating-area,
 .ratings .color, 
 .rating-area .color {
   color: #FE980F
