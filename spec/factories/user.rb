@@ -6,9 +6,9 @@ FactoryGirl.define do
     password "123456789"
   end
 
-  factory :admin do
+  factory :admin, class: User do
     email { Forgery(:internet).email_address }
     admin true
-    password {Forgery(:basic).password}
+    password "123456789"
   end
 end

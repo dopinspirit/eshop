@@ -31,6 +31,10 @@ group :development, :test do
   gem 'forgery', '~> 0.6.0'
 
   gem 'capybara', '~> 2.4.4'
+  gem "chromedriver-helper"
+  gem 'selenium-webdriver', '~> 2.46.2'
+
+  gem 'database_cleaner', '~> 1.4.1'
 
 end
 
